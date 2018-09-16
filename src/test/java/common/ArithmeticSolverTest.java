@@ -11,6 +11,30 @@ public class ArithmeticSolverTest extends TestCase{
 		
 	}
 	
+	public void testAddNegativeNumbers() {
+		
+		ArithmeticSolver solver = new ArithmeticSolver();
+		assertEquals(0.0, solver.add(2.0, -2.0));
+		assertEquals(-55.0, solver.add(-58.0, 3.0));
+		assertEquals(10.0, solver.add(25.0, -15.0));
+		assertEquals(-58110005.0, solver.add(-58752887.0, 642882.0));
+		
+	}
+	
+	public void testAddLargeNumbers() {
+		
+		ArithmeticSolver solver = new ArithmeticSolver();
+		assertEquals(-58110005.0, solver.add(-58752887.0, 642882.0));		
+		
+	}
+	
+	public void testAddDecimalNumbers() {
+		
+		ArithmeticSolver solver = new ArithmeticSolver();
+		assertEquals(8.6, solver.add(5.3, 3.3));
+		assertNotNull(solver.add(9.445,  3.333));
+	}
+	
 	public void testSubtract() {
 		
 		ArithmeticSolver solver = new ArithmeticSolver();
